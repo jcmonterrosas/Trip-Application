@@ -10,9 +10,11 @@ class Trip {
     Date diaFin   
 
     static constraints = {
-        actividades widget: 'textarea'
-        espectativas nullable: true, widget: 'textarea'
+        destino blank: false
+        cantidadDias blank: false
         diaInicio nullable: true
         diaFin nullable: true
+        actividades widget: 'textarea'
+        espectativas nullable: true, widget: 'textarea'
     }
 }
