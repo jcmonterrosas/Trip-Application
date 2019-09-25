@@ -14,6 +14,14 @@ class TripController {
         respond tripService.list(params), model:[tripCount: tripService.count()]
     }
 
+
+    def finder(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+
+        def somelist = Trip.findAllByDestino(params.id)
+        respond Trip.list(params), model:[tripCount: Trip.count(), somelist:somelist]
+    }
+
     def show(Long id) {
         respond tripService.get(id)
     }
